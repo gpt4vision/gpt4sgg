@@ -1,0 +1,120 @@
+body {
+    font-family: 'Gilmer', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+
+footer {
+    margin: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+}
+
+section {
+    margin: 200px;
+}
+
+h2 {
+    text-align: center;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Changed to space-between */
+}
+
+.header-logo {
+    width: 250px; /* Adjust as necessary */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.header-title {
+    font-size: 2em; /* Adjust title size as necessary */
+    text-align: center;
+    flex-grow: 1; /* Allows the title to grow and use up available space */
+    margin: 20px;
+    margin-left:200px;
+    padding-left: auto;
+    padding-right: auto;
+}
+
+nav {
+    color: #003366; /* This is a navy blue */
+    text-align: center;
+}
+
+section {
+    background-color: #fff;
+}
+
+footer {
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+.author-affiliations span {
+  font-weight: bold;
+}
+
+.author-affiliations a {
+  text-decoration: none;
+  color: black;
+}
+
+.affiliation {
+  margin-top: 5px;
+}
+
+.emails {
+  font-style: italic;
+  margin-top: 5px;
+}
+
+
+.italic-text {
+  font-style: italic;
+}
+
+.buttons {
+  margin: 20px;
+  text-align: center; /* This centers the inline-block elements */
+}
+
+.button {
+  text-decoration: none;
+  background-color: #4169E1; /* PolyU Red for buttons */
+  color: white; /* White text */
+  border: none;
+  padding: 10px 20px; /* Size of the button */
+  border-radius: 20px; /* Rounded corners */
+  font-size: 16px; /* Text size */
+  cursor: pointer; /* Mouse cursor on hover */
+  display: inline-block; /* Allows for text-align center to work */
+  margin: 5px; /* Optional: adds space between the buttons */
+}
+
+
+.button:hover {
+  background-color: #555; /* Lighter gray on hover */
+}
+
+
+pre {
+  background-color: #f4f4f4; /* light grey background */
+  border: 1px solid #ddd; /* light grey border */
+  padding: 10px;
+}
+
+code {
+  font-family: 'Courier New', Courier, monospace; /* monospaced font */
+}
+
+
+.flex-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+

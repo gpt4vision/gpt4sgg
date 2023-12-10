@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GPT4SGG: Synthesizing Scene Graphs from Holistic and Region-specific Narratives</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-flex-container">
+            <img src="resources/polyu-logo.png" alt="PolyU Logo" class="header-logo">
+            <h1 class="header-title">GPT4SGG: Synthesizing Scene Graphs from Holistic and Region-specific Narratives</h1>
+        </div>
+    </header>
+<nav>
+<div class="author-affiliations">
+  <span><a href="https://scholar.google.com/citations?user=kuQ_mrAAAAAJ&hl=en">Zuyao Chen</a><sup>1,2</sup></span>,
+  <span><a href="https://scholar.google.com/citations?user=XujjZmUAAAAJ&hl=en">Jinlin Wu</a><sup>2,3</sup></span>,
+  <span><a href="https://scholar.google.com/citations?user=cuJ3QG8AAAAJ&hl=en">Zhen Lei</a><sup>2,3</sup></span>,
+  <span><a href="">Zhaoxiang Zhang</a><sup>2,3</sup></span>,
+  <span><a href="https://scholar.google.com/citations?user=w2HXPUUAAAAJ&hl=en">Changwen Chen</a><sup>1</sup></span>
+  <div class="affiliation">
+    <sup>1</sup> The Hong Kong Polytechnic University
+  </div>
+    <a href="https://chenlab.comp.polyu.edu.hk" style="margin:50px;color:#003366;"> https://chenlab.comp.polyu.edu.hk </a>
+  <div class="affiliation">
+    <sup>2</sup> Centre for Artificial Intelligence and Robotics, HKISI, CAS
+  </div>
+  <div class="affiliation">
+    <sup>3</sup> NLPR, Institute of Automation, Chinese Academy of Sciences, Beijing, China
+  </div>
+</div>
+<div class="buttons">
+  <a href="https://arxiv.org/pdf/2312.04314.pdf" class="button">arXiv</a>
+  <a href="" class="button">Code</a>
+  <a href="" class="button">Demo</a>
+  <a href="" class="button">Dataset</a>
+  <a href="" class="button">Model</a>
+</div>
+</nav>
+    <section>
+        <div class="flex-container">
+        <img src="resources/GPT4SGG-intro.png" style="width:70%;height:auto;" alt="Challenges in learning scene graphs from natural language description.">
+	</div>
+        <h2>Abstract</h2>
+        <p> Learning scene graphs from natural language descriptions has proven to be a cheap and promising scheme for Scene Graph Generation (SGG). However, such unstructured caption data and its processing are troubling the learning an acurrate and complete scene graph. This dilema can be summarized as three points. <ul><li><b>First</b>, traditional language parsers often fail to extract meaningful relationship triplets from caption data.</li><li><b>Second</b>, grounding unlocalized objects in parsed triplets will meet ambiguity in visual-language alignment.</li><li><b>Last</b>, caption data typically are sparse and exhibit bias to partial observations of image content. These three issues make it hard for the model to generate comprehensive and accurate scene graphs.</li></ul> To fill this gap, we propose a simple yet effective framework, <span class="italic-text" style="color: #000080;"><b>GPT4SGG</b></span>, to synthesize scene graphs from holistic and region-specific narratives. The framework discards traditional language parser, and localize objects before obtaining relationship triplets. To obtain relationship triplets, holistic and dense region-specific narratives are generated from the image. With such textual representation of image data and a task-specific prompt, an LLM, particularly GPT-4, directly synthesizes a scene graph as pseudo labels. Experimental results showcase GPT4SGG significantly improves the performance of SGG models trained on image-caption data. We believe this pioneering work can motivate further research into mining the visual reasoning capabilities of LLMs.</p>
+    </section>
+    <section>
+	<h2> Method </h2>
+        <div class="flex-container">
+           <img src="resources/GPT4SGG-main.png" style="width:70%; height:auto;" alt="Overview of <b>GPT4SGG</b>.">
+        </div>	
+        <p><b>Textual representation of image data</b>: localised objects, holistic & region-specific narratives. </p>
+        <p><b>Task-specific (SGG-aware) Prompt</b>: synthesize scene graphs based on the textual input for image data. </p> 	  
+    </section>
+    <section>
+        <h2> Example of GPT4SGG </h2>
+        <div class="flex-container">
+           <img src="resources/GPT4SGG-example.png" style="width:100%; height:auto;" alt="gpt4sgg-example">
+        </div>	
+    </section>
+    <section>
+	<h2> Samples of COCO-SG@GPT </h2>
+        <div class="flex-container">
+           <img src="resources/GPT4SGG-samples.png" style="width:100%; height:auto;" alt="gpt4sgg-samples">
+        </div>	
+    </section>
+    <section>
+        <h2> BibTeX </h2>
+	<p> Please cite <b><span class="italic-text" style="color: #000080;">GPT4SGG</span></b> in your publications if it helps your research: </p>
+	<button onclick="copyToClipboard()">Copy to Clipboard</button>
+	<pre><code id="codeBlock">
+	@misc{chen2023gpt4sgg,
+	      title={GPT4SGG: Synthesizing Scene Graphs from Holistic and Region-specific Narratives}, 
+	      author={Zuyao Chen and Jinlin Wu and Zhen Lei and Zhaoxiang Zhang and Changwen Chen},
+	      year={2023},
+	      eprint={2312.04314},
+	      archivePrefix={arXiv},
+	      primaryClass={cs.CV}
+	}</code></pre>
+  <!-- JavaScript -->
+  <script>
+    function copyToClipboard() {
+      const codeBlock = document.getElementById('codeBlock');
+      const range = document.createRange();
+      range.selectNode(codeBlock);
+      window.getSelection().addRange(range);
+      try {
+        document.execCommand('copy');
+        console.log('Copied to clipboard');
+      } catch (err) {
+        console.error('Failed to copy: ', err);
+      }
+      window.getSelection().removeAllRanges();
+    }
+  </script>
+    </section>
+    <footer>
+        <p>Acknowledgement: ChatGPT for website building</p>
+    </footer>
+</body>
+</html>
+
