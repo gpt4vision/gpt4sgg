@@ -13,6 +13,8 @@ footer {
 
 section {
     margin: 200px;
+    margin-left: 200px;
+    margin-right: 200px;
 }
 
 h2 {
@@ -22,12 +24,14 @@ h2 {
 header {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Changed to space-between */
+    justify-content: center; /* Changed to space-between */
 }
 
 .header-logo {
-    width: 250px; /* Adjust as necessary */
+    width: 300px; /* Adjust as necessary */
     height: auto; /* Maintain aspect ratio */
+    margin-left: 20px;
+    margin: 20px;
 }
 
 .header-title {
@@ -35,14 +39,13 @@ header {
     text-align: center;
     flex-grow: 1; /* Allows the title to grow and use up available space */
     margin: 20px;
-    margin-left:200px;
-    padding-left: auto;
-    padding-right: auto;
 }
 
 nav {
     color: #003366; /* This is a navy blue */
     text-align: center;
+    margin-left: 200px;
+    margin-right: 200px;
 }
 
 section {
@@ -56,11 +59,12 @@ footer {
 
 .author-affiliations span {
   font-weight: bold;
+  color: #4169E1;
 }
 
 .author-affiliations a {
   text-decoration: none;
-  color: black;
+  color: #4169E1;
 }
 
 .affiliation {
