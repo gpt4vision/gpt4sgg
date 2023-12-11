@@ -53,6 +53,36 @@
         <p><b>Task-specific (SGG-aware) Prompt</b>: synthesize scene graphs based on the textual input for image data. </p> 	  
     </section>
     <section>
+        <h2> SGG-aware Instruction-following Data </h2>
+        <div class="flex-container">
+            <table class="styled-table">
+              <thread>
+                <td>File</td>
+                <td>MD5SUM</td>
+                <td>Description</td>
+              </thread>
+              <tbody>
+                <tr>
+                    <td>coco_iou_instruct.jsonl</td>
+                    <td> </td>
+                    <td>Raw Input/Output for GPT-4</td>
+                </tr>
+                <tr>
+                  <td>coco_sg_gpt.json</td>
+                  <td> </td>
+                  <td>COCO-SG@GPT dataset</td>
+                </tr>
+              </tbody>
+            </table>
+        </div>        
+    </section>
+    <section>
+        <h2> Comparison with state-of-the-arts on VG150 test set </h2>
+        <div class="flex-container">
+           <img src="resources/perf.png" style="width:70%;height:auto;" alt="comparison with sota">
+        </div>
+    </section>
+    <section>
         <h2> Example of GPT4SGG </h2>
         <div class="flex-container">
            <img src="resources/GPT4SGG-example.png" style="width:100%; height:auto;" alt="gpt4sgg-example">
@@ -69,14 +99,14 @@
 	<p> Please cite <b><span class="italic-text" style="color: #000080;">GPT4SGG</span></b> in your publications if it helps your research: </p>
 	<button onclick="copyToClipboard()">Copy to Clipboard</button>
 	<pre><code id="codeBlock">
-	@misc{chen2023gpt4sgg,
-	      title={GPT4SGG: Synthesizing Scene Graphs from Holistic and Region-specific Narratives}, 
-	      author={Zuyao Chen and Jinlin Wu and Zhen Lei and Zhaoxiang Zhang and Changwen Chen},
-	      year={2023},
-	      eprint={2312.04314},
-	      archivePrefix={arXiv},
-	      primaryClass={cs.CV}
-	}</code></pre>
+@misc{chen2023gpt4sgg,
+      title={GPT4SGG: Synthesizing Scene Graphs from Holistic and Region-specific Narratives}, 
+      author={Zuyao Chen and Jinlin Wu and Zhen Lei and Zhaoxiang Zhang and Changwen Chen},
+      year={2023},
+      eprint={2312.04314},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
+}</code></pre>
   <!-- JavaScript -->
   <script>
     function copyToClipboard() {
@@ -94,7 +124,7 @@
     }
   </script>
     </section>
-     <div class="flex-container" style="width:35%;height:auto;">
+     <div class="flex-container" style="margin-left:200px; margin-right:200px;width:35%;height:auto;">
     	<script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=5T7TMJjrPpjnLv9T9NCEXRTSCqmcMrY-9ko6oydEsP0&cl=ffffff&w=a"></script>
      </div>
     <footer>
