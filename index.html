@@ -42,7 +42,19 @@
         <img src="resources/GPT4SGG-intro.png" style="width:70%;height:auto;" alt="Challenges in learning scene graphs from natural language description.">
 	</div>
         <h2>Abstract</h2>
-        <p> Learning scene graphs from natural language descriptions has proven to be a cheap and promising scheme for Scene Graph Generation (SGG). However, such unstructured caption data and its processing are troubling the learning an acurrate and complete scene graph. This dilema can be summarized as three points. <ul><li><b>First</b>, traditional language parsers often fail to extract meaningful relationship triplets from caption data.</li><li><b>Second</b>, grounding unlocalized objects in parsed triplets will meet ambiguity in visual-language alignment.</li><li><b>Last</b>, caption data typically are sparse and exhibit bias to partial observations of image content. These three issues make it hard for the model to generate comprehensive and accurate scene graphs.</li></ul> To fill this gap, we propose a simple yet effective framework, <span class="italic-text" style="color: #000080;"><b>GPT4SGG</b></span>, to synthesize scene graphs from holistic and region-specific narratives. The framework discards traditional language parser, and localize objects before obtaining relationship triplets. To obtain relationship triplets, holistic and dense region-specific narratives are generated from the image. With such textual representation of image data and a task-specific prompt, an LLM, particularly GPT-4, directly synthesizes a scene graph as pseudo labels. Experimental results showcase GPT4SGG significantly improves the performance of SGG models trained on image-caption data. We believe this pioneering work can motivate further research into mining the visual reasoning capabilities of LLMs.</p>
+        <p> Training Scene Graph Generation (SGG) models with natural language captions has become increasingly popular due to the abundant, cost-effective, 
+            and open-world generalization supervision signals that natural language offers.
+            However, such unstructured caption data and its processing pose significant challenges in learning accurate and comprehensive scene graphs.
+            The challenges can be summarized as three aspects: 
+            <ul><li><b>1)</b> traditional scene graph parsers based on linguistic representation often fail to extract meaningful relationship triplets from caption data.
+          </li><li><b>2)</b>  grounding unlocalized objects of parsed triplets will meet ambiguity issues in visual-language alignment. 
+          </li><li><b>3)</b> caption data typically are sparse and exhibit bias to partial observations of image content.
+          </ul> Aiming to address these problems,  we propose a divide-and-conquer strategy with a novel framework
+          named  <span class="italic-text" style="color: #000080;"><b>GPT4SGG</b></span>, to obtain more accurate and comprehensive scene graph signals. 
+          This framework decomposes a complex scene into a bunch of simple regions, 
+          resulting in a set of region-specific narratives. With these region-specific narratives (partial observations) and a holistic narrative (global observation) for an image, 
+          a large language model (LLM) performs the relationship reasoning to synthesize 
+          an accurate and comprehensive scene graph.
     </section>
     <section>
 	<h2> Method </h2>
@@ -52,32 +64,9 @@
         <p><b>Textual representation of image data</b>: localised objects, holistic & region-specific narratives. </p>
         <p><b>Task-specific (SGG-aware) Prompt</b>: synthesize scene graphs based on the textual input for image data. </p> 	  
     </section>
+
     <section>
-        <h2> SGG-aware Instruction-following Data </h2>
-        <div class="flex-container">
-            <table class="styled-table">
-              <thread>
-                <td>File</td>
-                <td>MD5SUM</td>
-                <td>Description</td>
-              </thread>
-              <tbody>
-                <tr>
-                    <td>coco_iou_instruct.jsonl</td>
-                    <td> </td>
-                    <td>Raw Input/Output for GPT-4</td>
-                </tr>
-                <tr>
-                  <td>coco_sg_gpt.json</td>
-                  <td> </td>
-                  <td>COCO-SG@GPT dataset</td>
-                </tr>
-              </tbody>
-            </table>
-        </div>        
-    </section>
-    <section>
-        <h2> Comparison with state-of-the-arts on VG150 test set </h2>
+        <h2> Comparison with state-of-the-arts on VG150 test set, diamond symbol marks fully supervised methods </h2>
         <div class="flex-container">
            <img src="resources/perf.png" style="width:70%;height:auto;" alt="comparison with sota">
         </div>
